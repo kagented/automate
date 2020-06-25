@@ -1,5 +1,5 @@
 # fullness_automate
-In my church there are various repetitive tasks every week, so I decided to develop simple python scripts for automating such tasks.
+In my church there are various repetitive tasks for presentation engineers every week, so I decided to develop simple python scripts for automating such tasks.
 
 # Tasks
 
