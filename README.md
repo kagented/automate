@@ -3,14 +3,14 @@ In my church there are various repetitive tasks for presentation engineers every
 
 # Tasks
 
-1. Open powerpoint files with worships songs
+- Open powerpoint files with worships songs
 
-2. Download prayer text from a website
+- Download prayer text from a website
 
-3. Reduce volume by about 10% till volume is 0.
+- Reduce volume by about 10% till volume is 0.
 
-4. Call bible verses via APIs
+- Call bible verses via APIs
 
-5. Create a powerpoint format and automate creating slides using Powerpoint API.
+- Create a powerpoint format and automate creating slides using Powerpoint API.
 
-6. Translate lyrics from korean to english
+- Translate lyrics from korean to english
