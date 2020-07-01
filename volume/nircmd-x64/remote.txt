@@ -1,0 +1,3 @@
+C:\Users\USER\Downloads\nircmd-x64>nircmd.exe changesystemvolume -3000
+
+https://stackoverflow.com/questions/5486725/how-to-execute-a-command-prompt-command-from-python
