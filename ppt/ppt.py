@@ -1,7 +1,6 @@
 import os
 import sys
 import time
-from langdetect import detect
 
 #콘티 곡 제목 불러오기
 
@@ -31,23 +30,6 @@ while fileorder < len(filename):
             if file.startswith(filename[fileorder]):
                 dirlist.append(os.path.join(root, file))
     fileorder = fileorder + 1
-
-'''
-
-print(dirlist)
-print(len(dirlist))
-
-dirlist = [ x for x in dirlist if x[-10] is not detect(x) == 'ko' ]
-
-for dirname in dirlist:
-    if detect(dirname[-6]) == 'ko':
-        print(dirname)
-        dirlist.remove(dirname)
-
-
-print(dirlist)
-print(len(dirlist))
-'''
 
 openorder = 0
 
