@@ -16,5 +16,3 @@ In my church there are various repetitive tasks for presentation engineers every
 - Translate lyrics from korean to english
 
 - Fit 4 image files(sheet music) into a single page
-
-- Use phone as a microphone and connect to an audio mixer
