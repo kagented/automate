@@ -19,13 +19,14 @@ while True:
 
         text = recorded.replace(" ", "")
 
-        print(text+' 피피티 파일을 열고있습니다..')
+        
 
         if text == '완료':
             print('프로그램을 마칩니다.')
             break
 
         else:
+            print(text+' 피피티 파일을 열고있습니다..')
 
             #불러온 제목 검색
 
@@ -40,7 +41,7 @@ while True:
                         dirlist.append(os.path.join(root, file))
 
             os.system('start "" "'+dirlist[0]+'""')
-            time.sleep(3)
+            time.sleep(5)
             os.system('cls')
     except:
         print('잘 못 들었습니다.')
