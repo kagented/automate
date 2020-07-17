@@ -36,4 +36,4 @@ openorder = 0
 while openorder < len(dirlist):
     os.system('start "" "'+dirlist[openorder]+'""')
     openorder = openorder + 1
-    time.sleep(3)
+    time.sleep(2)

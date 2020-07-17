@@ -12,14 +12,17 @@ mic = sr.Microphone(device_index=1)
 while True:
     with mic as source:
         print('찬양 제목을 말해주세요.')
-        audio = r.listen(source)
+        audio = r.listen(source, timeout=5)
 
     try:
         recorded = r.recognize_google(audio, language="ko-KR")
 
         text = recorded.replace(" ", "")
 
+        print(text+' 피피티 파일을 열고있습니다..')
+
         if text == '완료':
+            print('프로그램을 마칩니다.')
             break
 
         else:
@@ -37,5 +40,7 @@ while True:
                         dirlist.append(os.path.join(root, file))
 
             os.system('start "" "'+dirlist[0]+'""')
+            time.sleep(3)
+            os.system('cls')
     except:
         print('잘 못 들었습니다.')
