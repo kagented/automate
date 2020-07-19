@@ -11,7 +11,7 @@ mic = sr.Microphone(device_index=1)
 
 while True:
     with mic as source:
-        print('찬양 제목을 말해주세요.')
+        print('찬양 제목을 말해주세요.\n')
         audio = r.listen(source, timeout=5)
 
     try:
@@ -26,7 +26,7 @@ while True:
             break
 
         else:
-            print(text+' 피피티 파일을 열고있습니다..')
+            print(text+' 피피티 파일을 열고있습니다..\n')
 
             #불러온 제목 검색
 
@@ -44,4 +44,4 @@ while True:
             time.sleep(3)
             os.system('cls')
     except:
-        print('잘 못 들었습니다.')
+        print('잘 못 들었습니다.\n')
