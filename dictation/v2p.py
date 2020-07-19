@@ -11,12 +11,18 @@ mic = sr.Microphone(device_index=1)
 
 while True:
     with mic as source:
+        print('3')
+        time.sleep(1)
+        print('2')
+        time.sleep(1)
+        print('1')
+        time.sleep(1)
         print('찬양 제목을 말해주세요.\n')
+        r.adjust_for_ambient_noise(source)
         audio = r.listen(source, timeout=5)
 
     try:
         recorded = r.recognize_google(audio, language="ko-KR")
-
         text = recorded.replace(" ", "")
 
         
@@ -41,7 +47,8 @@ while True:
                         dirlist.append(os.path.join(root, file))
 
             os.system('start "" "'+dirlist[0]+'""')
-            time.sleep(3)
-            os.system('cls')
+            time.sleep(2)
+            print('\n'+'='*50+'\n')
     except:
         print('잘 못 들었습니다.\n')
+        print('\n'+'='*50+'\n')
