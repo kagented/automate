@@ -41,7 +41,7 @@ while True:
                         dirlist.append(os.path.join(root, file))
 
             os.system('start "" "'+dirlist[0]+'""')
-            time.sleep(5)
+            time.sleep(3)
             os.system('cls')
     except:
         print('잘 못 들었습니다.')
