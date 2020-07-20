@@ -1,7 +1,15 @@
-# worship_helper
+# Worship_Assistant
 In my church there are various repetitive tasks for presentation engineers every week, so I decided to develop simple python scripts for automating such tasks.
 
-# Tasks
+## Webpage
+
+- Wix?
+
+## Software
+
+### Functions
+
+- Voice Recognition
 
 - Open powerpoint files with worships songs
 
@@ -16,3 +24,18 @@ In my church there are various repetitive tasks for presentation engineers every
 - Translate lyrics from korean to english
 
 - Fit 4 image files(sheet music) into a single page
+
+### UI
+
+- tkinter
+
+
+## Hardware
+
+- Raspberry Pi
+
+- Projector
+
+- Speaker
+
+- Power Cable
