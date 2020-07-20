@@ -1,13 +1,13 @@
 # Worship_Assistant
 In my church there are various repetitive tasks for presentation engineers every week, so I decided to develop simple python scripts for automating such tasks.
 
-# Webpage
+## Webpage
 
 - Wix?
 
-# Software
+## Software
 
-## Functions
+### Functions
 
 - Voice Recognition
 
@@ -25,12 +25,12 @@ In my church there are various repetitive tasks for presentation engineers every
 
 - Fit 4 image files(sheet music) into a single page
 
-## UI
+### UI
 
 - tkinter
 
 
-# Hardware
+## Hardware
 
 - Raspberry Pi
 
