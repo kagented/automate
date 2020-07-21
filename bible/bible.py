@@ -1,6 +1,10 @@
 import pandas as pd
 
-df = pd.read_csv('t_kjv.csv')
+
+
+bible = input('성경 번역본? kjv(킹제임스버젼)/gae(개역개정)\n')
+
+df = pd.read_csv(bible+'.csv', encoding='CP949')
 
 biblechp = {
     '창세기': '1',
@@ -72,18 +76,18 @@ biblechp = {
 
 }
 
-v1 = input('말씀?')
+v1 = input('말씀?\n')
 
 v1 = biblechp[v1]
 
-v2 = input('장?')
+v2 = input('장?\n')
 
 if len(str(v2)) == 1:
     v2 = '00'+str(v2)
 elif len(str(v2)) == 2:
     v2 = '0'+str(v2)
 
-v3 = input('절?')
+v3 = input('절?\n')
 
 if len(str(v3)) == 1:
     v3 = '00'+str(v3)
