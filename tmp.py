@@ -1,9 +1,5 @@
-from langdetect import detect
+from tkinter import Tk, font
+import pprint
 
-a = 'swim'
-
-b = '내'
-
-print(detect(a))
-
-print(detect(b))
+root = Tk()
+pprint.pprint(font.families())
