@@ -4,7 +4,7 @@ import time
 
 #콘티 곡 제목 불러오기
 
-f = open('test.txt', 'rt', encoding='UTF8')
+f = open('songlist.txt', 'rt', encoding='UTF8')
 lines = f.readlines()
 
 filename = []
