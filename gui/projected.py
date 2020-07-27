@@ -12,7 +12,7 @@ window.bind("<F11>", lambda event: window.attributes("-fullscreen",
                                     not window.attributes("-fullscreen")))
 window.bind("<Escape>", lambda event: window.attributes("-fullscreen", False))
 
-window.title('Worship Assistant')
+window.title('Worship Assistant-Projected')
 
 window.resizable(True, True)
 
