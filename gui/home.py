@@ -8,7 +8,7 @@ from tkinter import messagebox
 
 root = tk.Tk()
 
-root.configure(bg = 'black')
+#root.configure(bg = 'black')
 
 root.title('Worship Assistant-Home')
 

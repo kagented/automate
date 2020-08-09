@@ -1,12 +1,13 @@
 import pandas as pd
 
-entry = input('bible | book | ch | verse1 | verse 2 \n')
+#entry = input('bible | book | ch | verse1 | verse 2 \n')
+entry = input('bible(gae/kjv) | book | ch | verse 1 \n')
 
 d1 = entry.split()[0]
 d2 = entry.split()[1]
 d3 = entry.split()[2]
 d4 = entry.split()[3]
-d5 = entry.split()[4]
+#d5 = entry.split()[4]
 
 bible = d1
 
