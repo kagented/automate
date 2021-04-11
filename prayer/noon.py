@@ -29,7 +29,7 @@ for t in text:
     if t.parent.name not in blacklist:
         output += '{} '.format(t)
 
-output = output[141:-79]
+output = output[1000:-110]
 
 print(output)
 
