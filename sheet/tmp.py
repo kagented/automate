@@ -1,11 +1,21 @@
 from docx import Document
 from docx.shared import Cm
+from docx.oxml import OxmlElement
+from docx.oxml.ns import qn
 import os
 import glob
 
-#os.remove('sheet.docx')
+os.remove('sheet.docx')
 
 document = Document()
+
+#column
+
+section = document.sections[0]
+
+sectPr = section._sectPr
+cols = sectPr.xpath('./w:cols')[0]
+cols.set(qn('w:num'),'2')
 
 #margin
 
@@ -30,4 +40,3 @@ for img in imgs:
 
 
 document.save('sheet.docx')
-
