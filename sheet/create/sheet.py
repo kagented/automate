@@ -5,6 +5,39 @@ from docx.oxml.ns import qn
 from docx2pdf import convert
 import os
 import glob
+from shutil import copyfile
+
+#콘티 곡 제목 불러오기
+
+f = open('songlist.txt', 'rt', encoding='UTF8')
+lines = f.readlines()
+
+filename = []
+
+for line in lines:
+    line = line.replace('\n', '')
+    filename.append(line)
+
+f.close()
+
+
+#불러온 제목 검색
+dirname = r'C:\Users\USER\Documents\GitHub\worship_helper\sheet\search\sheet_db'
+
+dirlist = []
+
+
+fileorder = 0
+
+while fileorder < len(filename):
+    for root, dirs, files in os.walk(dirname):
+        for file in files:
+            if filename[fileorder] in file:              
+                dirlist.append(os.path.join(root, file))
+    fileorder = fileorder + 1
+
+print(dirlist)
+
 
 #os.remove('sheet.docx')
 
@@ -27,6 +60,12 @@ for section in sections:
     section.left_margin = Cm(0)
     section.right_margin = Cm(0)
 
+#copy image files to tmp directory
+
+for imgdir in dirlist:
+    copyfile(imgdir, '\img')
+
+#create msword document
 
 imgs =  glob.glob("img/*.jpg")
 

@@ -62,7 +62,7 @@ for file in dirlist:
     currentPresentation.Close()
 
 outputPresentation.save()
-outputPresentation.close()
+#outputPresentation.close()
 Application.Quit()
 
 os.system('start '+ output)
