@@ -20,7 +20,7 @@ f.close()
 
 
 #불러온 제목 검색
-dirname = r'C:\Users\USER\Desktop\예배곡ppt'
+dirname = r'C:\Users\USER\Desktop\tmp'
 
 dirlist = []
 

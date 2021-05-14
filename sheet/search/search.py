@@ -4,6 +4,7 @@ import time
 import win32com.client
 from glob import glob
 from os import walk
+import shutil
 
 #콘티 곡 제목 불러오기
 
@@ -37,6 +38,21 @@ while fileorder < len(filename):
 
 print(dirlist)
 
+
+#악보 복사
+
+copyorder = 0
+
+target = r'C:\Users\USER\Documents\GitHub\worship_helper\sheet\search\img'
+
+while copyorder < len(dirlist):
+    shutil.copy(dirlist[copyorder], target)
+    copyorder = copyorder + 1
+    
+    time.sleep(2)
+
+'''
+
 #바로 열기
 
 openorder = 0
@@ -44,8 +60,8 @@ openorder = 0
 while openorder < len(dirlist):
     os.system('start "" "'+dirlist[openorder]+'""')
 
-    openorder = len(dirlist)
-    #openorder = openorder + 1
+    openorder = openorder + 1
     
     time.sleep(2)
 
+'''
