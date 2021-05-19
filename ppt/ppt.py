@@ -20,7 +20,7 @@ f.close()
 
 
 #불러온 제목 검색
-dirname = r'C:\Users\USER\Desktop\tmp'
+dirname = r'C:\Users\USER\Desktop\예배곡ppt'
 
 dirlist = []
 
@@ -58,8 +58,12 @@ for file in dirlist:
     currentPresentation = Application.Presentations.Open(file)
     currentPresentation.Slides.Range(range(1, currentPresentation.Slides.Count+1)).copy()
     Application.Presentations(output).Windows(1).Activate()    
-    outputPresentation.Application.CommandBars.ExecuteMso("PasteSourceFormatting")    
+    outputPresentation.Application.CommandBars.ExecuteMso("PasteSourceFormatting")
     currentPresentation.Close()
+'''
+#add blank
+    outputPresentation.Slides.Add(1,12)
+'''    
 
 outputPresentation.save()
 outputPresentation.close()
