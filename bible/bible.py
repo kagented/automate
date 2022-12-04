@@ -10,10 +10,10 @@ d4 = entry.split()[3]
 #d5 = entry.split()[4]
 
 try:
-
+    filepath = r"C:\\GitHub\\worship_assistant\\bible\\"
     bible = d1
 
-    df = pd.read_csv(bible+'.csv', encoding='CP949')
+    df = pd.read_csv(filepath+bible+'.csv', encoding='CP949')
 
     biblechp = {
         '창세기': '1',

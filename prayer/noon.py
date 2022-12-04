@@ -9,32 +9,12 @@ html = res.content
 
 soup = BeautifulSoup(html, 'html.parser')
 
-text = soup.find_all(text=True)
+text = soup.select_one('#comp-jbykc7h3').text
 
-output = ''
-
-blacklist = [
-    '[document]',
-    'noscript',
-    'header',
-    'html',
-    'meta',
-    'head',
-    'input',
-    'script',
-    'style',
-    ]
-
-for t in text:
-    if t.parent.name not in blacklist:
-        output += '{} '.format(t)
-
-output = output[1000:-110]
-
-print(output)
+print(text)
 
 f = open('noon.txt', 'w', encoding='UTF8')
 
-f.write(output)
+f.write(text)
 
 f.close()
