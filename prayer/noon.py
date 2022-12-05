@@ -3,18 +3,18 @@ from bs4 import BeautifulSoup
 import requests
 import re
 
-res = requests.get('https://www.noonprayerkorea.com')
+def prayer():
+    res = requests.get('https://www.noonprayerkorea.com')
+    html = res.content
+    soup = BeautifulSoup(html, 'html.parser')
+    prayer_text = soup.select_one('#comp-jbykc7h3').text
 
-html = res.content
+    return prayer_text
 
-soup = BeautifulSoup(html, 'html.parser')
+# print(text)
 
-text = soup.select_one('#comp-jbykc7h3').text
+# f = open('noon.txt', 'w', encoding='UTF8')
 
-print(text)
+# f.write(text)
 
-f = open('noon.txt', 'w', encoding='UTF8')
-
-f.write(text)
-
-f.close()
+# f.close()

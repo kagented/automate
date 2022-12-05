@@ -7,7 +7,7 @@ from os import walk
 
 #콘티 곡 제목 불러오기
 
-f = open('songlist.txt', 'rt', encoding='UTF8')
+f = open(r'C:\\GitHub\\worship_assistant\\ppt\\songlist.txt', 'rt', encoding='UTF8')
 lines = f.readlines()
 
 filename = []
@@ -20,7 +20,7 @@ f.close()
 
 
 #불러온 제목 검색
-dirname = r'C:\Users\USER\Desktop\예배곡ppt'
+dirname = r'C:\\GitHub\\worship_assistant\\data\\ppt'
 
 dirlist = []
 
@@ -48,22 +48,26 @@ while openorder < len(dirlist):
 
 #피피티 병합
 
-output = r'C:\Users\USER\Documents\GitHub\worship_helper\ppt\merged.pptx'
+output = r'C:\\GitHub\\worship_assistant\\ppt\\merged.pptx'
 
 Application = win32com.client.Dispatch("PowerPoint.Application")
 outputPresentation = Application.Presentations.Add() 
 outputPresentation.SaveAs(output)
+pagecount = 0
 
 for file in dirlist:    
     currentPresentation = Application.Presentations.Open(file)
+    pagecount = currentPresentation.Slides.Count+1
     currentPresentation.Slides.Range(range(1, currentPresentation.Slides.Count+1)).copy()
     Application.Presentations(output).Windows(1).Activate()    
     outputPresentation.Application.CommandBars.ExecuteMso("PasteSourceFormatting")
     currentPresentation.Close()
-'''
+    
+
+
 #add blank
-    outputPresentation.Slides.Add(1,12)
-'''    
+    outputPresentation.Slides.Add(pagecount, 1)
+
 
 outputPresentation.save()
 outputPresentation.close()
