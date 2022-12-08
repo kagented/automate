@@ -1,8 +1,7 @@
 import datetime as dt
 import cred, reply, task
 from telegram.ext import *
-
-print('Bot started')
+import os
 
 def handle_message(update, context):
     text = str(update.message.text).lower()
@@ -15,20 +14,31 @@ def start_command(update, context):
 def help_command(update, context):
     update.message.reply_text('Google!')
 
+def sheet_dir(filepath):
+    sheet_list = []
+    for root, directories, files in os.walk(filepath):
+        for filename in files:
+            # Join the two strings in order to form the full filepath.
+            # filepath = os.path.join(root, filename)
+            sheet_list.append(filename[:-4])  # Add it to the list.
+    return sheet_list
+
 def send_sheet(update, context):
-    print(update)
     chat_id = update.message.chat_id
-    filepath = r'C:\\GitHub\\worship_assistant\\data\\sheet\\'
-    # imgname = '성도여다함께.jpg'
-    filename = update["message"]["text"].split()[1]+'.jpg'
-    sheet = open(filepath+filename, 'rb')
-    context.bot.send_document(chat_id,sheet)
+    filepath = r'C:\\data\\sheet\\'
+    try:
+        filename = update["message"]["text"].split()[1]
+        sheet = open(filepath+filename+'.jpg', 'rb')
+        context.bot.send_document(chat_id,sheet)
+    except:
+        update.message.reply_text('악보가 없습니다.')
+
+
 
 def send_ppt(update, context):
-    print(update)
+    # print(update)
     chat_id = update.message.chat_id
-    filepath = r'C:\\GitHub\\worship_assistant\\data\\ppt\\'
-    # imgname = '성도여다함께.jpg'
+    filepath = r'C:\\data\\ppt\\'
     filename = update["message"]["text"].split()[1]+'.ppt'
     sheet = open(filepath+filename, 'rb')
     context.bot.send_document(chat_id,sheet)
@@ -62,5 +72,7 @@ def main():
     updater.start_polling()
     updater.idle()
 
-main()
 
+print('Bot started')
+
+main()
