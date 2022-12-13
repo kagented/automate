@@ -38,10 +38,10 @@ def send_sheet(update, context):
 def send_ppt(update, context):
     # print(update)
     chat_id = update.message.chat_id
-    filepath = r'C:\\data\\ppt\\'
-    filename = update["message"]["text"].split()[1]+'.ppt'
-    sheet = open(filepath+filename, 'rb')
-    context.bot.send_document(chat_id,sheet)
+    req = update["message"]["text"]
+    merged = task.get_ppt(req)
+    ppt = open(merged, 'rb')
+    context.bot.send_document(chat_id,ppt)
 
 def prayer_command(update, context):
     update.message.reply_text('오늘의 나라사랑정오기도 \n'+dt.datetime.now().strftime("%Y-%m-%d"))
